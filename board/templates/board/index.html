@@ -20,7 +20,7 @@
                         </a>
                     </td>
                     <td>
-                        {{forloop.title}}
+                        <a href="{% url 'board:detail' post.id %}">{{post.title}}</a>
                     </td>
                     <td>
                         {{post.author}}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row pt-4 my-3">
+        <h3>글 읽기</h3>
+    </div>
+</div>
+<div class="row my-3"></div>
+    <table class="table table-bordered">
+        <tr>
+            <td>[글제목] : {{board_list.title}}</td>
+        </tr>
+        <tr>
+            <td>
+                <p>[글 내용]</p>
+                {{ board_list.content }}
+                <p>[{{board_list.published_date}}]</p>
+            </td>
+        </tr>
+    </table>
+    <form action="" method="put">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div style="padding: 5px 50px; float:right">
+<!--            <input class="btn btn-primary" type="submit" value="글등록">-->
+            <a href="{% url 'board:index' %}" class="btn btn-primary">글목록</a>
+        </div>
+    </form>
+{% endblock %}
